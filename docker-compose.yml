@@ -1,0 +1,22 @@
+---
+
+version: '2'
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - web_volume:/usr/local/tomcat*/webapps
+  web:
+    image: tomcat
+    ports:
+      - "8080:80"
+    volumes:
+      - web_volume:/usr/local/tomcat/
+
+volumes:
+    web_volume:
+
+---

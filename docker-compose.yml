@@ -1,0 +1,25 @@
+---
+version: '3.7'
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: DockerfileTomcat
+    volumes:
+      - type: volume
+        source: webapp
+        target: /webapps
+  web:
+    image: tomcat
+    volume:
+      - type: volume
+        source: webapp
+        target: /usr/local/tomcat/webapps/
+    ports:
+      - "80:80"
+volumes:
+  webapps:
+
+volumes:
+    webapp:

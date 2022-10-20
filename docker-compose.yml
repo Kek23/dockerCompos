@@ -1,25 +1,24 @@
 ---
 version: '3.7'
 services:
-
-  app:
+  maven:
     build:
       context: .
       dockerfile: DockerfileTomcat
     volumes:
       - type: volume
-        source: webapp
+        source: webapps
         target: /webapps
   web:
-    image: tomcat
-    volume:
+    image: tomcat:9
+    volumes:
       - type: volume
-        source: webapp
+        source: webapps
         target: /usr/local/tomcat/webapps/
     ports:
       - "80:80"
 volumes:
   webapps:
 
-volumes:
-    webapp:
+---
+

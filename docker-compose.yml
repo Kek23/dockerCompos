@@ -9,6 +9,7 @@ services:
       - type: volume
         source: webapps
         target: /usr/local/tomcat/webapps
+
   web:
     image: tomcat:9
     volumes:
@@ -16,7 +17,7 @@ services:
         source: webapps
         target: /usr/local/tomcat/webapps/
     ports:
-      - "80:80"
+      - "8082:8080"
 volumes:
   webapps:
 

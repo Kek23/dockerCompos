@@ -4,11 +4,11 @@ services:
   maven:
     build:
       context: .
-      dockerfile: DockerfileTomcat
+      dockerfile: DockerfileMaven
     volumes:
       - type: volume
         source: webapps
-        target: /webapps
+        target: /usr/local/tomcat/webapps
   web:
     image: tomcat:9
     volumes:
@@ -21,4 +21,3 @@ volumes:
   webapps:
 
 ---
-

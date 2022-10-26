@@ -1,4 +1,4 @@
-FROM tomcat:9.0                                                                                                                                                                                              >
+FROM ubuntu:20.04                                                                                                                                                                                            >
 RUN apt-get -y update
 RUN apt-get -y install default-jdk maven git
 

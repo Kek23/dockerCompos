@@ -1,10 +1,11 @@
+
 ---
 version: '3.7'
 services:
   maven:
     build:
       context: .
-      dockerfile: DockerfileMaven
+      dockerfile: DockerfileAlpine
     volumes:
       - type: volume
         source: webapps
